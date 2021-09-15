@@ -2,9 +2,9 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <AzureFunctionsVersion>V3</AzureFunctionsVersion>
-        <LangVersion>9</LangVersion>
     </PropertyGroup>
     <ItemGroup>
+        <PackageReference Include="Bogus" Version="33.1.1" />
         <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.11" />
     </ItemGroup>
     <ItemGroup>
@@ -15,7 +15,6 @@
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
             <CopyToPublishDirectory>Never</CopyToPublishDirectory>
         </None>
-        <None Remove=".gitignore" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\FSSwaggerProviderDemo.Common\FSSwaggerProviderDemo.Common.csproj" />
