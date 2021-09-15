@@ -2,6 +2,7 @@
 using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
+using FSSwaggerProviderDemo.Common;
 using FSSwaggerProviderDemo.MyWeatherApi.Config;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
@@ -33,12 +34,18 @@ namespace FSSwaggerProviderDemo.MyWeatherApi
             log.LogInformation("C# HTTP trigger function processed a request.");
 
             string city = req.Query["city"];
+            
+            if(city== null)
+                return new BadRequestObjectResult("Please pass a city on the query string");
 
-            var weatherServiceUrl = _settings.Value.WeatherServiceUrl;
+            var weatherServiceUrl = $"{_settings.Value.WeatherServiceUrl}?city={city}";
+            var response = await _httpClient.GetAsync(weatherServiceUrl);
 
-            return city != null
-                ? (ActionResult)new OkObjectResult($"Hello, {city}")
-                : new BadRequestObjectResult("Please pass a name on the query string or in the request body");
+            var weather = await response.Content.ReadAsAsync<Weather>();
+
+            return weather != null
+                ? (ActionResult)new OkObjectResult(response)
+                : new BadRequestObjectResult("Error ocurred");
             
         }
     }

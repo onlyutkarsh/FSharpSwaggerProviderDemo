@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
 using System.Threading.Tasks;
 using Bogus;
 using FSSwaggerProviderDemo.Common;
@@ -28,7 +29,7 @@ namespace FSSwaggerProviderDemo.WeatherService
                 .RuleFor(x => x.High, f => Math.Round(f.Random.Double(18.0, 44.0), 2))
                 .RuleFor(x => x.Low, f => Math.Round(f.Random.Double(-4.0, 15.0), 2));
 
-            var weather = fakeWeather.Generate(1);
+            var weather = fakeWeather.Generate(1).First();
 
             return city != null
                 ? (ActionResult)new OkObjectResult(weather)
