@@ -44,7 +44,7 @@ namespace FSSwaggerProviderDemo.MyWeatherApi
             var weather = await response.Content.ReadAsAsync<Weather>();
 
             return weather != null
-                ? (ActionResult)new OkObjectResult(response)
+                ? (ActionResult)new OkObjectResult(weather)
                 : new BadRequestObjectResult("Error ocurred");
             
         }

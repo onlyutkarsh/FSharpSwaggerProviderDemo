@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FSSwaggerProviderDemo.Commo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FSSwaggerProviderDemo.WeatherService", "FSSwaggerProviderDemo.WeatherService\FSSwaggerProviderDemo.WeatherService.csproj", "{CD35F3DB-EE88-41DC-B922-7A80C2BE0394}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSSwaggerProviderDemo.AcceptanceTests", "FSSwaggerProviderDemo.AcceptanceTests\FSSwaggerProviderDemo.AcceptanceTests.fsproj", "{BAA43510-BD31-486F-A082-E60F19F04D36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{CD35F3DB-EE88-41DC-B922-7A80C2BE0394}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD35F3DB-EE88-41DC-B922-7A80C2BE0394}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD35F3DB-EE88-41DC-B922-7A80C2BE0394}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAA43510-BD31-486F-A082-E60F19F04D36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAA43510-BD31-486F-A082-E60F19F04D36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAA43510-BD31-486F-A082-E60F19F04D36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAA43510-BD31-486F-A082-E60F19F04D36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
